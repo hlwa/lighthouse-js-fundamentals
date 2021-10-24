@@ -1,3 +1,4 @@
+/*
 for( let i = 100; i < 201; i++){
   if( i % 3 === 0 && i % 4 === 0){
     console.log("LoopyLighthouse");
@@ -9,10 +10,20 @@ for( let i = 100; i < 201; i++){
     console.log(i);
   }
 }
-
-/*
-Matches the expected pattern for each log
-AssertionError: For number 108 output should be LoopyLighthouse but I found Loopy: expected 'Loopy' to equal 'LoopyLighthouse'
-    at eval (eval at <anonymous> (https://web.compass.lighthouselabs.ca/assets/application-5a91c61206a8ecbf92fae5ffa1497d961ffe55f760c5696b7d8bdc7068e0057d.js:2165:7194), <anonymous>:19:16)
-    at Array.forEach (<anonymous>)
 */
+
+function loopyLighthouse(range, multiples, words){
+  for( let i = range[0]; i <= range[1]; i++){
+    if( i % multiples[0] === 0 && i % multiples[1] === 0){
+      console.log(words[0] + words[1]);
+    }else if( i % multiples[0] === 0 ){
+      console.log(words[0]);
+    }else if( i % multiples[1] === 0 ){
+      console.log(words[1]);
+    }else{
+      console.log(i);
+    }
+  }
+}
+
+loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
